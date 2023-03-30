@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Лёнина К.Н.</title>
+                <style>
+
+                </style>
+        </head>
+            <body>
+                <script>
+                
+                    
+                    p = 1, f = 1;
+                    function arctan(x, n)
+                     {
+                         var r;
+                         if (n == 0)
+                             return x;
+  
+                        //Рекурсия
+                        r = arctan(x, n - 1);
+                        p =Math.pow(Math.abs(p),2) * x* Math.pow((-1),n);
+                        //2n+1
+                        f = 2*f+1;
+                        return (r + p / f);
+                    }
+  
+                     
+                    var x = parseFloat(prompt("Введите значение x меньше 1 (Десятичное число вводить через точку) ",""));
+                    
+                    if(Math.abs(x)<=1)
+                    {
+                    var n = parseFloat(prompt("Введите значение n",""));
+                    var res = arctan(x, n);
+                    document.write(res.toFixed(6));
+                    }
+                    else{
+                        alert('Введите x <1');
+                        location.reload();
+                    }
+                
+                </script> 
+            </body>
+    </html>
